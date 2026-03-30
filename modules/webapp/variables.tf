@@ -4,14 +4,30 @@ variable "app_name" {
 }
 
 variable "instance_type" {
-  description = "Tipo/tamano de la instancia (varia segun provider)"
+  description = "Tipo de instancia EC2"
   type        = string
+  default     = "t2.micro"
 }
 
 variable "allowed_ports" {
-  description = "Lista de puertos permitidos en las reglas de firewall"
+  description = "Lista de puertos permitidos en las reglas de ingress del Security Group"
   type        = list(number)
   default     = [80, 443]
+}
+
+variable "ami_id" {
+  description = "ID de la AMI para la instancia EC2"
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "ID de la subnet donde se desplegara la instancia"
+  type        = string
+}
+
+variable "vpc_id" {
+  description = "ID de la VPC para el Security Group"
+  type        = string
 }
 
 variable "tags" {
