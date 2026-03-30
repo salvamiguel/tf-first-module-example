@@ -1,0 +1,12 @@
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+*.tfvars
+!example.tfvars
+// He añadido el archivo de lock para que no se suba a git. 
+// La idea es que se genere localmente con `terraform init` 
+// con eso vale para esta demo. Para un proyecto real, 
+// lo ideal es que se suba a git para que todos los miembros del 
+// equipo tengan la misma versión de los proveedores.
+.terraform.lock.hcl
